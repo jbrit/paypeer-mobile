@@ -8,11 +8,12 @@ First, run the development server:
 yarn dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## Syncing Changes to the app
 
-First, run the export comand:
+Run the export comand:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ```bash
 yarn static
@@ -22,4 +23,6 @@ then the:
 ```bash
 npx cap sync
 ```
+
+Then open the android and ios directories in android studio and xcode respectively to run the mobile app.
 
