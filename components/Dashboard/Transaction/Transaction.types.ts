@@ -1,5 +1,7 @@
+import type { Status } from "@/types/global";
+
 export interface ITransactionProps {
   price: string;
-  status: "sent" | "received";
+  status: Status;
   walletAddress: string;
 }

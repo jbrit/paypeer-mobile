@@ -34,6 +34,15 @@ export const StyledButton = styled(AntdBtn)<ButtonProps>`
     border-color: ${({ buttonType }) =>
       buttonType === "primary" ? "#262626" : "#262626"};
   }
+  &.ant-btn-default:disabled {
+    color: ${({ buttonType }) =>
+      buttonType === "primary" ? "#ffffff" : "rgba(32, 34, 35, 0.87)"};
+    background-color: ${({ buttonType }) =>
+      buttonType === "primary" ? "#262626" : "#F4F5F5"};
+    border-color: ${({ buttonType }) =>
+      buttonType === "primary" ? "#262626" : "#F4F5F5"};
+    opacity: 0.47;
+  }
   svg {
     margin-right: 10px;
   }

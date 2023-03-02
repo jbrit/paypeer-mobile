@@ -10,8 +10,11 @@ import { Notification } from "@/svg/notification";
 import { Send } from "@/svg/send";
 import { Swap } from "@/svg/swap";
 import { TopUp } from "@/svg/top-up";
+import { useRouter } from "next/router";
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <>
       <Flexbox
@@ -70,7 +73,7 @@ const Home = () => {
           {
             name: "Swap",
             icon: <Swap />,
-            onClick: () => console.log("Ss"),
+            onClick: () => router.push("/swap"),
           },
         ].map(({ icon, name, onClick }) => (
           <MainCTA onClick={onClick} key={name}>
