@@ -1,6 +1,6 @@
 import CSSTypes from "csstype";
 
-export type TypographyVariants = "xs" | "sm";
+export type TypographyVariants = "xxs" | "xs" | "sm";
 
 export type FontWeight = "regular" | "medium" | "bold";
 

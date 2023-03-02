@@ -21,12 +21,14 @@ export const typographyVariant = (
   variant: TypographyVariants
 ): TypographyValue => {
   switch (variant) {
+    case "xxs":
+      return { text: ["1rem", "1.4rem"], display: ["1.8rem", "1.8rem"] };
     case "xs":
       return { text: ["1.2rem", "1.7rem"], display: ["2rem", "2.8rem"] };
     case "sm":
       return {
         text: ["1.4rem", "2rem"],
-        display: ["1.875rem", "2.375rem"],
+        display: ["2.4rem", "3.4rem"],
       };
   }
 };
