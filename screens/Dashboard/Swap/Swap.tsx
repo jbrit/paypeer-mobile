@@ -105,9 +105,14 @@ const Swap = () => {
                 {title}
               </Text>
               {onInfoClick && (
-                <button onClick={onInfoClick}>
+                <Flexbox
+                  as="button"
+                  alignItems="center"
+                  justifyContent="center"
+                  onClick={onInfoClick}
+                >
                   <Info />
-                </button>
+                </Flexbox>
               )}
             </Flexbox>
             <Text
