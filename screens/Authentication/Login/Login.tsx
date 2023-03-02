@@ -38,7 +38,7 @@ const Login = () => {
           </FormItem>
         </Flexbox>
         <Button mb="24px" htmlType="submit" buttonType="primary">
-          Sign Up
+          Sign In
         </Button>
         <Text textAlign="center" variant="sm" weight="regular">
           Forgot Password?{" "}
