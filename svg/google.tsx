@@ -10,7 +10,7 @@ export function Google(props: SVGProps<SVGSVGElement>) {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_2_915)">
+      <g clipPath="url(#clip0_2_915)">
         <path
           d="M24.214 12.2245C24.214 11.2413 24.1342 10.5238 23.9616 9.77966H12.7336V14.2176H19.3242C19.1913 15.3205 18.4738 16.9815 16.8793 18.0976L16.8569 18.2462L20.407 20.9964L20.653 21.0209C22.9118 18.9347 24.214 15.8653 24.214 12.2245Z"
           fill="#4285F4"
