@@ -99,18 +99,21 @@ const Home = () => {
             price: "$102.32",
             status: "sent" as const,
             walletAddress: "0xf5...34et",
+            name: "ThatDeji",
           },
           {
             price: "$11.05",
             status: "received" as const,
             walletAddress: "0xf5...34et",
+            name: "Sophia",
           },
-        ].map(({ price, status, walletAddress }, index) => (
+        ].map(({ price, status, walletAddress, name }, index) => (
           <Transaction
             key={index}
             price={price}
             status={status}
             walletAddress={walletAddress}
+            name={name}
           />
         ))}
       </Flexbox>

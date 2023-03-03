@@ -1,5 +1,6 @@
 import Flexbox from "@/components/Global/Flexbox/Flexbox.styles";
 import { Text } from "@/components/Global/Typography/Typography.styles";
+import { CircledArrowInward, CircledArrowOutward } from "@/svg/circled-arrow";
 import {
   StyledTransactionLeft,
   StyledTransactionRight,
@@ -11,14 +12,19 @@ const Transaction: React.FC<ITransactionProps> = ({
   price,
   status,
   walletAddress,
+  name,
 }) => {
   return (
     <StyledTransactionwWrapper>
       <StyledTransactionLeft>
-        <div className="random" />
+        {status === "received" ? (
+          <CircledArrowInward />
+        ) : (
+          <CircledArrowOutward />
+        )}
         <Flexbox flexDir="column" flexGap="2px">
           <Text variant="xs" weight="medium" letterSpacing="0.004em">
-            {status === "received" ? "Received From" : "Sent To"}
+            {name}
           </Text>
           <Text
             variant="xxs"
@@ -26,6 +32,7 @@ const Transaction: React.FC<ITransactionProps> = ({
             letterSpacing="0.004em"
             color="rgba(32, 34, 35, 0.67)"
           >
+            {status === "received" ? "From " : "To "}
             {walletAddress}
           </Text>
         </Flexbox>

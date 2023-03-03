@@ -1,4 +1,3 @@
-import Flexbox from "@/components/Global/Flexbox/Flexbox.styles";
 import styled from "styled-components";
 
 export const StyledTransactionwWrapper = styled.li`
@@ -12,12 +11,6 @@ export const StyledTransactionwWrapper = styled.li`
   padding: 14px 0;
   &:not(:last-child) {
     border-bottom: 0.6px solid rgba(202, 204, 206, 0.68);
-  }
-  .random {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #f4f5f5;
   }
 `;
 

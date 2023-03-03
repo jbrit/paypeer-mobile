@@ -4,4 +4,5 @@ export interface ITransactionProps {
   price: string;
   status: Status;
   walletAddress: string;
+  name: string;
 }
