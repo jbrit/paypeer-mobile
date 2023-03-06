@@ -43,6 +43,19 @@ button {
   border: none;
   cursor: pointer;
 }
+
+.ant-select-dropdown {
+  box-shadow: none;
+}
+.ant-select-dropdown .ant-select-item {
+  padding: 4px;
+  align-items: center;
+  /* border: 0.6px solid rgba(202, 204, 206, 0.47);
+border-radius: 2px; */
+}
+.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #FCFDFD
+}
 `;
 
 export default GlobalStyle;

@@ -1,25 +1,23 @@
 import React from "react";
-import Avartar from "@/components/Dashboard/Avartar/Avartar";
-import { MainCTA } from "@/components/Dashboard/CTA/CTA.styles";
-import Transaction from "@/components/Dashboard/Transaction/Transaction";
 import Flexbox from "@/components/Global/Flexbox/Flexbox.styles";
-import {
-  Display,
-  Text,
-} from "@/components/Global/Typography/Typography.styles";
+import { Text } from "@/components/Global/Typography/Typography.styles";
 import DashboardSecondaryLayout from "@/layouts/DashboardSecondaryLayout/DashboardSecondaryLayout";
 import SwapInput from "@/components/Dashboard/SwapInput/SwapInput";
 import { SwapButton, SwapInputContainer } from "./Swap.styles";
 import { SwapTwo } from "@/svg/swap-two";
-import type { Direction } from "@/types/global";
+import type { Currency, Direction, Swap } from "@/types/global";
 import { Info } from "@/svg/info";
 import Button from "@/components/Global/Button/Button";
 import SlippageModal from "@/components/Dashboard/SlippageModal/SlippageModal";
 
 const Swap = () => {
-  const [input, setInput] = React.useState({
+  const [input, setInput] = React.useState<Swap<string>>({
     send: "0.0",
     receive: "0.0",
+  });
+  const [currency, setCurrency] = React.useState<Swap<Currency | null>>({
+    send: "naira",
+    receive: "naira",
   });
   const [swapDir, setSwapDir] = React.useState<Direction>("up");
   const [isOpenSlippageModal, setIsOpenSlippageModal] = React.useState(false);
@@ -37,7 +35,8 @@ const Swap = () => {
       />
       <SwapInputContainer>
         <SwapInput
-          currency="naira"
+          currency={currency}
+          setCurrency={setCurrency}
           setState={setInput}
           state={input}
           status="sent"
@@ -50,7 +49,8 @@ const Swap = () => {
           }
         />
         <SwapInput
-          currency="naira"
+          currency={currency}
+          setCurrency={setCurrency}
           setState={setInput}
           state={input}
           status="received"
@@ -59,6 +59,10 @@ const Swap = () => {
           onClick={() => {
             setSwapDir((prevSwapDir) => (prevSwapDir === "up" ? "down" : "up"));
             setInput((prevInput) => ({
+              receive: prevInput.send,
+              send: prevInput.receive,
+            }));
+            setCurrency((prevInput) => ({
               receive: prevInput.send,
               send: prevInput.receive,
             }));

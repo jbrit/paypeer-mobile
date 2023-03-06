@@ -1,8 +1,8 @@
 import CSSTypes from "csstype";
 
-export type TypographyVariants = "xxs" | "xs" | "sm";
+export type TypographyVariants = "xxs" | "xs" | "sm" | "md";
 
-export type FontWeight = "regular" | "medium" | "bold";
+export type FontWeight = "light" | "regular" | "medium" | "bold";
 
 export type ITypographyProps = {
   variant: TypographyVariants;

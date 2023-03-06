@@ -4,6 +4,11 @@ export const Gordita = localFont({
   variable: "--font-Gordita",
   src: [
     {
+      path: "./fonts/Gordita Light.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
       path: "./fonts/Gordita Regular.woff",
       weight: "400",
       style: "normal",

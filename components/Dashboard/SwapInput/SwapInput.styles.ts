@@ -32,5 +32,5 @@ export const StyledSwapInput = styled.input`
   outline: none;
   flex-grow: 1;
   border: none;
-  max-width: 60%;
+  max-width: 50%;
 `;

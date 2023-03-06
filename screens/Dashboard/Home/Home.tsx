@@ -1,3 +1,4 @@
+import React from "react";
 import Avartar from "@/components/Dashboard/Avartar/Avartar";
 import { MainCTA } from "@/components/Dashboard/CTA/CTA.styles";
 import Transaction from "@/components/Dashboard/Transaction/Transaction";
@@ -11,9 +12,41 @@ import { Send } from "@/svg/send";
 import { Swap } from "@/svg/swap";
 import { TopUp } from "@/svg/top-up";
 import { useRouter } from "next/router";
+import Select from "@/components/Global/Select/Select";
+import { SelectOptions } from "@/components/Global/Select/Select.types";
+
+const items: SelectOptions["items"] = [
+  {
+    label: (
+      <Text
+        color="rgba(32, 34, 35, 0.87)"
+        variant="xxs"
+        letterSpacing="0.0025em"
+      >
+        United States Dollar
+      </Text>
+    ),
+    value: "usd",
+  },
+  {
+    label: (
+      <Text
+        color="rgba(32, 34, 35, 0.87)"
+        variant="xxs"
+        letterSpacing="0.0025em"
+      >
+        Nigerian Naira
+      </Text>
+    ),
+    value: "naira",
+  },
+];
 
 const Home = () => {
   const router = useRouter();
+  const [currency, setCurrency] = React.useState<
+    SelectOptions["items"][number]["value"]
+  >(items[1].value);
 
   return (
     <>
@@ -47,15 +80,13 @@ const Home = () => {
         flexDir="column"
         alignItems="center"
       >
-        <Text
-          color="rgba(32, 34, 35, 0.87)"
-          variant="xxs"
-          letterSpacing="0.0025em"
-        >
-          United States Dollar
-        </Text>
+        <Select
+          onChange={(value) => setCurrency(value)}
+          value={currency}
+          items={items}
+        />
         <Display weight="bold" variant="sm" letterSpacing="0.0025em">
-          $1032.00
+          {currency === "naira" ? "₦" : "$"}1032.00
         </Display>
       </Flexbox>
       <Flexbox margin="0 0 36px 0" justifyContent="center" flexGap="8px">
@@ -63,7 +94,7 @@ const Home = () => {
           {
             name: "Send",
             icon: <Send />,
-            onClick: () => console.log("Ss"),
+            onClick: () => router.push("/send"),
           },
           {
             name: "Top Up",
