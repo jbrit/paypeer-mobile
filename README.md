@@ -26,3 +26,12 @@ npx cap sync
 
 Then open the android and ios directories in android studio and xcode respectively to run the mobile app.
 
+
+```bash
+npx cap open ios
+```
+
+```bash
+npx cap open android
+```
+
